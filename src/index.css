@@ -1,0 +1,41 @@
+:root {
+  --negro: #05100a;
+  --selva: #0d2418;
+  --verde-oscuro: #163b22;
+  --verde-medio: #1e5c2e;
+  --verde-vivo: #2a8a3e;
+  --verde-claro: #3dba55;
+  --dorado: #c8a84b;
+  --dorado-claro: #e8cc7a;
+  --crema: #f2ead8;
+  --crema-dim: #c4b896;
+  --blanco: #faf7f0;
+  --texto-dim: #7a9080;
+  --borde: rgba(200, 168, 75, 0.18);
+  --borde-verde: rgba(61, 186, 85, 0.15);
+
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--negro);
+  color: var(--crema);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}

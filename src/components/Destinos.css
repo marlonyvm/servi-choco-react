@@ -1,0 +1,126 @@
+.destinos {
+  background: var(--selva);
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse 80% 70% at 50% 100%, rgba(2, 37, 18, 0.795) 60%), url("../images/IMG_20230727_161222.jpg") center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 3.5rem 2rem;
+  place-items: center;
+}
+
+.destinos-container {
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0, auto;
+  z-index: 1;
+}
+
+.destinos-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  gap: 2rem;
+}
+
+.destinos-intro p {
+  max-width: 400px;
+  color: var(--texto-dim);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+
+/* GRID */
+.destinos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* CARD */
+.dest-card {
+  background: var(--negro);
+  border: 1px solid var(--borde-verde);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.dest-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--borde);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+}
+
+
+/* IMAGEN / EMOJI */
+.dest-img {
+  height: 160px;
+  display: flex;
+  font-size: 3.5rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.dest-card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, var(--negro));
+}
+
+/* BODY */
+.dest-body {
+  padding: 1.5rem;
+}
+
+.dest-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--blanco);
+  margin-bottom: .3rem;
+}
+
+.tipo {
+  font-size: .7rem;
+  color: var(--dorado);
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+  margin-bottom: .75rem;
+}
+
+.desc {
+  font-size: .82rem;
+  color: var(--texto-dim);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* PRECIO */
+.precio {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--dorado);
+}
+
+.precio small {
+  font-family: 'DM Sans', sans-serif;
+  font-size: .72rem;
+  color: var(--texto-dim);
+}
+
+
+/* BOTÓN */
+.btn-ver {
+  background: none;
+  border: none;
+  color: var(--dorado);
+  cursor: pointer;
+}

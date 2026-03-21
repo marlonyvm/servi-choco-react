@@ -1,0 +1,80 @@
+.audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.audio-player button {
+  width: 2rem; height: 2rem;
+  background: linear-gradient(135deg, var(--verde-medio), var(--verde-vivo));
+  border: 1px solid rgba(61,186,85,0.4);
+  border-radius: 50%;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.song-name {
+  color: white;
+  font-size: 0.68rem;
+  font-family: 'DM Mono', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
+  letter-spacing: 0.03em;
+}
+
+/* BOTON */
+.play-btn {
+  background: #00c2a8;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTENEDOR BARRAS */
+.bars {
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+  height: 14px;
+}
+
+/* CADA BARRA */
+.bars span {
+  width: 3px;
+  height: 6px;
+  background: var(--verde-claro);
+  border-radius: 2px;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+/* DIFERENTES TIEMPOS */
+.bars span:nth-child(1) {
+  animation-delay: 0s;
+}
+.bars span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.bars span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* ANIMACIÓN */
+@keyframes bounce {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 14px;
+  }
+}

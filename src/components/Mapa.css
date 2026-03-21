@@ -1,0 +1,66 @@
+.mapa-section {
+  padding: 80px 20px;
+  background: var(--selva);
+  color: white;
+}
+
+.mapa-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1.5rem;
+  max-height: 500px;
+  margin-top: 20px;
+}
+
+/* LISTA */
+.mapa-list {
+  background: var(--negro);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  overflow-y: auto;
+  padding: 1.2rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--verde-medio) transparent;
+  max-height: 500px;
+}
+
+.mapa-list h4 {
+  font-size: .65rem;
+  letter-spacing: .15rem;
+  text-transform: uppercase;
+  color: var(--dorado);
+  font-family:'DM Mono',monospace; 
+  margin-bottom:1rem; 
+  padding-bottom:.75rem; 
+  border-bottom:1px solid var(--borde);
+}
+
+.mapa-item {
+  padding: .8rem;
+  border-radius: 8px;
+  cursor: none;
+  transition: all .2s;
+  border: 1px solid transparent;
+  margin-bottom: .3rem;
+}
+
+.mapa-item:hover,
+.mapa-item.active {
+  background: rgba(200, 168, 75, .07);
+  border-color: var(--borde);
+}
+
+
+.m-name { color:var(--crema); font-size:.88rem; }
+.m-tipo { color:var(--texto-dim); font-size:.72rem; margin-top:.1rem; }
+.m-precio { color:var(--dorado); font-size:.72rem; margin-top:.25rem; font-family:'DM Mono',monospace; }
+
+
+/* MAPA */
+.mapa {
+  height: 500px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid var(--borde); height: 100%;
+}

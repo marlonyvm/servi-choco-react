@@ -1,0 +1,130 @@
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+/* NAVBAR BASE */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 60px;
+    width: auto;
+    max-width: 100vw;
+    box-sizing: border-box;
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background: #0d241893;
+}
+
+nav.scrolled {
+    background:rgba(5,16,10,.92);
+    backdrop-filter:blur(20px); 
+    border-bottom:1px solid var(--borde); 
+}
+
+
+/* LOGO */
+.nav-logo { 
+    flex: 1;
+    display: flex;
+    font-family:'Playfair Display',serif; 
+    font-size:1.3rem; 
+    font-weight:700; 
+    letter-spacing:.12em; 
+    color:var(--crema); 
+    text-decoration:none;
+}
+.nav-logo img{
+    height: 40px;
+    display: block;
+
+}
+.nav-logo em { color:var(--dorado); font-style:normal; }
+
+/* LINKS */
+.nav-links { 
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    justify-content: center;        
+}
+
+.nav-links button {
+    background: none;
+    text-transform: uppercase;
+    border: none;
+    color: var(--crema-dim);
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+}
+.nav-links button:hover { color:var(--dorado); }
+
+/* ACTIVO */
+.nav-links button.active::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: var(--dorado);
+    margin-top: 4px;
+}
+.cta { flex: 1; padding:.5rem 1.2rem; border-radius:4px; font-weight:500 !important; }
+/* CTA */
+.nav-links .cta {
+    background: var(--dorado);
+    color: var(--negro);
+    padding: .5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 200;
+}
+.cta:hover { background:var(--dorado-claro) !important; color:var(--negro) !important}
+
+.AudioPlayer{
+    flex:1;
+    display: flex;
+    justify-content: center;
+}
+
+/* HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: black;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        display: none;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links button {
+        margin: 10px 0;
+    }
+}
+
