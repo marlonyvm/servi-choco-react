@@ -5,7 +5,7 @@ import Destinos from "./components/Destinos";
 import "leaflet/dist/leaflet.css";
 import Mapa from "./components/Mapa";
 import Reservar from "./components/Reservar";
-import Stats from "./components/stats";
+import Stats from "./components/Stats";
 
 function App() {
   return (
