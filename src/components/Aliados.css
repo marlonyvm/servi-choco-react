@@ -1,0 +1,45 @@
+#aliados {
+    background: var(--negro);
+    text-align: center;
+}
+
+.aliados-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.aliados-inner p {
+    color: var(--texto-dim);
+    margin: 1rem 0 3rem;
+}
+
+.aliados-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.aliado-item {
+    background: var(--selva);
+    border: 1px solid var(--borde-verde);
+    border-radius: 12px;
+    padding: 1.5rem 2.5rem;
+    transition: all .3s;
+}
+
+.aliado-item:hover {
+    border-color: var(--borde);
+    transform: translateY(-3px);
+}
+
+.aliado-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--crema);
+}
+
+.aliado-item span {
+    font-size: .72rem;
+    color: var(--texto-dim);
+}

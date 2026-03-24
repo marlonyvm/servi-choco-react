@@ -1,0 +1,8 @@
+#testimonios { background:var(--selva); }
+.testi-layout { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:3rem; }
+.testi-card { background:var(--negro); border:1px solid var(--borde-verde); border-radius:16px; padding:2.5rem; position:relative; transition:all .3s; }
+.testi-card:hover { border-color:var(--borde); transform:translateY(-4px); }
+.testi-quote { font-family:'Playfair Display',serif; font-size:5rem; line-height:1; color:var(--dorado); opacity:.3; position:absolute; top:1rem; left:2rem; }
+.testi-text { font-size:.95rem; color:var(--crema-dim); line-height:1.8; margin-bottom:1.5rem; padding-top:1.5rem; font-style:italic; font-family:'Playfair Display',serif; }
+.testi-author strong { color:var(--blanco); font-size:.9rem; font-style:normal; font-family:'DM Sans',sans-serif; }
+.testi-author span { display:block; font-size:.72rem; color:var(--dorado); margin-top:.2rem; font-family:'DM Mono',monospace; }

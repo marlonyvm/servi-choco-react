@@ -1,0 +1,189 @@
+footer>* {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-cta-bar {
+    background: var(--verde-oscuro);
+    border-bottom: 1px solid var(--borde);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-cta-bar p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--crema);
+}
+
+.footer-cta-bar p em {
+    font-style: italic;
+    color: var(--dorado);
+}
+
+.footer-main-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 3rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+}
+
+.f-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--crema);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.f-logo em {
+    font-style: normal;
+    color: var(--dorado);
+}
+
+.f-desc {
+    font-size: .83rem;
+    color: var(--texto-dim);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.f-socials {
+    display: flex;
+    gap: .5rem;
+}
+
+.f-social {
+    width: 36px;
+    height: 36px;
+    background: rgba(200, 168, 75, .08);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dorado);
+    text-decoration: none;
+    font-size: .9rem;
+    transition: all .3s;
+    cursor: none;
+}
+
+.f-social:hover {
+    background: rgba(200, 168, 75, .15);
+    transform: translateY(-2px);
+}
+
+.f-col-title {
+    font-size: .62rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 1.2rem;
+    padding-bottom: .6rem;
+    border-bottom: 1px solid var(--borde);
+    display: block;
+}
+
+.f-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.f-list a {
+    font-size: .83rem;
+    color: var(--texto-dim);
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.f-list a:hover {
+    color: var(--dorado);
+}
+
+.f-contact-item {
+    display: flex;
+    gap: .75rem;
+    margin-bottom: .8rem;
+    align-items: flex-start;
+}
+
+.f-ico {
+    font-size: .9rem;
+    margin-top: 2px;
+}
+
+.f-contact-item span,
+.f-contact-item a {
+    font-size: .82rem;
+    color: var(--texto-dim);
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.f-contact-item a:hover {
+    color: var(--dorado);
+}
+
+.f-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: var(--dorado);
+    color: var(--negro);
+    padding: .6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 500;
+    transition: all .3s;
+    margin-top: .5rem;
+    cursor: none;
+}
+
+.f-wa-btn:hover {
+    background: var(--dorado-claro);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--borde);
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom p {
+    font-size: .75rem;
+    color: #3a5040;
+}
+
+.f-bottom-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.f-bottom-links a {
+    font-size: .72rem;
+    color: #3a5040;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.f-bottom-links a:hover {
+    color: var(--dorado);
+}

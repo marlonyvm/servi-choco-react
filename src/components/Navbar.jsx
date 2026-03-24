@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "../images/logo-navbar.png";
 import AudioPlayer from "./AudioPlayer";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
 
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("inicio");
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Detectar scroll
   useEffect(() => {
@@ -39,7 +41,8 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
 
       <div className="nav-logo">
-        <img src={logo} alt= "Servichocó"/>
+        <a href="#hero">
+          <img src={logo} alt="Servichocó" /></a>
       </div>
 
       {/* BOTÓN MOBILE */}
@@ -48,19 +51,19 @@ function Navbar() {
       </div>
 
       <div className={`nav-links ${open ? "open" : ""}`}>
-        <button className={active==="nosotros" ? "active" : ""} onClick={() => irA("nosotros")}>Nosotros</button>
-        <button className={active==="destinos" ? "active" : ""} onClick={() => irA("destinos")}>Destinos</button>
-        <button className={active==="mapa" ? "active" : ""} onClick={() => irA("mapa")}>Mapa</button>
-        <button className={active==="pago" ? "active" : ""}>Pago</button>
-        <button className={active==="login" ? "active" : ""}>Login</button>
-        <button 
+        <button className={active === "nosotros" ? "active" : ""} onClick={() => irA("nosotros")}>Nosotros</button>
+        <button className={active === "destinos" ? "active" : ""} onClick={() => irA("destinos")}>Destinos</button>
+        <button className={active === "territorio" ? "active" : ""} onClick={() => irA("territorio")}>Mapa</button>
+        <button className={active === "pago" ? "active" : ""} onClick={() => irA("pago")}>Pago</button>
+        <button onClick={() => navigate("/login")}>Login</button>
+        <button
           className="cta"
-          onClick={() => irA("reserva")}
+          onClick={() => irA("reservar")}
         >
           Reservar
         </button>
       </div>
-      <div className="AudioPlayer"><AudioPlayer/></div>
+      <div className="AudioPlayer"><AudioPlayer /></div>
     </nav>
   );
 }

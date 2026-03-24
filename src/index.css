@@ -38,4 +38,12 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-weight: 300;
   overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+}
+
+.section {
+  border: solidr rebeccapurple;
 }

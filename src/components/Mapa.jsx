@@ -39,84 +39,88 @@ function Mapa() {
   }, []);
 
   return (
-    <section className="mapa-section" id="mapa">
-
-      <h2>Mapa del Chocó</h2>
-
-      <div className="mapa-container">
-
-        {/* 🟢 LISTA */}
-        <div className="mapa-list">
-          <h4>📍 Destinos</h4>
-          {destinos.map(d => (
-            <div
-              key={d.id}
-              className="mapa-item"
-              onClick={() => {
-                setDestinoSeleccionado({
-                  lat: Number(d.lat),
-                  lng: Number(d.lng),
-                  id: d.id
-                });
-
-                // 🔥 abrir popup
-                setTimeout(() => {
-                  const marker = markersRef.current[d.id];
-                  if (marker) {
-                    marker.openPopup();
-                  }
-                }, 300); // espera a que el mapa se mueva
-              }}
-            >
-              <div className="m-name">
-                {d.emoji} {d.nombre}
-              </div>
-
-              <div className="m-tipo">
-                {d.tipo}
-              </div>
-
-              <div className="m-precio">
-                Desde ${(d.precio / 1000).toFixed(0)}k
-              </div>
-            </div>
-          ))}
+    <section className="section" id="territorio">
+      <div className="container">
+        <div className="mapa-header">
+          <div className="section-label">04 — Territorio</div>
+          <h2>Mapa del <em>Chocó</em></h2>
+          <p>Explora los municipios y destinos turísticos del departamento.
+            Haz clic en cada marcador para más información.</p>
         </div>
+        <div className="mapa-container">
 
-        {/* 🔵 MAPA */}
-        <MapContainer
-          center={[5.8, -76.9]}
-          zoom={7}
-          className="mapa"
-        >
+          {/* 🟢 LISTA */}
+          <div className="mapa-list">
+            <h4>📍 Destinos</h4>
+            {destinos.map(d => (
+              <div
+                key={d.id}
+                className="mapa-item"
+                onClick={() => {
+                  setDestinoSeleccionado({
+                    lat: Number(d.lat),
+                    lng: Number(d.lng),
+                    id: d.id
+                  });
 
-          {/* 🔥 mueve el mapa */}
-          <MoverMapa destino={destinoSeleccionado} />
+                  // 🔥 abrir popup
+                  setTimeout(() => {
+                    const marker = markersRef.current[d.id];
+                    if (marker) {
+                      marker.openPopup();
+                    }
+                  }, 300); // espera a que el mapa se mueva
+                }}
+              >
+                <div className="m-name">
+                  {d.emoji} {d.nombre}
+                </div>
 
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                <div className="m-tipo">
+                  {d.tipo}
+                </div>
 
-          {destinos.map(d => (
-            <Marker
-              key={d.id}
-              position={[Number(d.lat), Number(d.lng)]}
-              ref={(ref) => {
-                if (ref) {
-                  markersRef.current[d.id] = ref;
-                }
-              }}
-            >
-              <Popup>
-                <strong>{d.emoji} {d.nombre}</strong><br />
-                {d.tipo}<br />
-                COP ${Number(d.precio).toLocaleString()}
-              </Popup>
-            </Marker>
-          ))}
+                <div className="m-precio">
+                  Desde ${(d.precio / 1000).toFixed(0)}k
+                </div>
+              </div>
+            ))}
+          </div>
 
-        </MapContainer>
+          {/* 🔵 MAPA */}
+          <MapContainer
+            center={[5.8, -76.9]}
+            zoom={7}
+            className="mapa"
+          >
 
+            {/* 🔥 mueve el mapa */}
+            <MoverMapa destino={destinoSeleccionado} />
+
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
+            {destinos.map(d => (
+              <Marker
+                key={d.id}
+                position={[Number(d.lat), Number(d.lng)]}
+                ref={(ref) => {
+                  if (ref) {
+                    markersRef.current[d.id] = ref;
+                  }
+                }}
+              >
+                <Popup>
+                  <strong>{d.emoji} {d.nombre}</strong><br />
+                  {d.tipo}<br />
+                  COP ${Number(d.precio).toLocaleString()}
+                </Popup>
+              </Marker>
+            ))}
+
+          </MapContainer>
+
+        </div>
       </div>
-
     </section>
   );
 }

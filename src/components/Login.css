@@ -1,0 +1,188 @@
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* FONDO CON IMAGEN */
+.login-bg{
+height:100vh;
+width: 100vw;
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:'DM Sans',sans-serif;
+background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+url('/src/images/lindo.jpeg') center/cover no-repeat;
+}
+
+/* CONTENEDOR */
+.login-container{
+width:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+/* TARJETA */
+.login-card{
+width:100%;
+max-width:420px;
+padding:40px;
+border-radius:16px;
+
+/* EFECTO VIDRIO */
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.2);
+
+color:#fff;
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* HEADER */
+.login-header{
+text-align:center;
+margin-bottom:30px;
+}
+
+.login-header h1{
+font-family:'Playfair Display',serif;
+font-size:28px;
+letter-spacing:1px;
+}
+
+.login-header em{
+color:#c8a84b;
+font-style:normal;
+}
+
+.login-header p{
+font-size:14px;
+color:#ddd;
+margin-top:8px;
+}
+
+/* FORM */
+.form-group{
+margin-bottom:20px;
+}
+
+.form-group label{
+font-size:13px;
+margin-bottom:6px;
+display:block;
+color:#ddd;
+}
+
+.form-group input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:none;
+outline:none;
+font-size:14px;
+
+/* estilo moderno */
+background:rgba(255,255,255,0.1);
+color:#fff;
+}
+
+.form-group input::placeholder{
+color:#bbb;
+}
+
+/* OPCIONES */
+.login-options{
+display:flex;
+justify-content:space-between;
+font-size:12px;
+margin-bottom:20px;
+}
+
+.login-options a{
+color:#c8a84b;
+text-decoration:none;
+}
+
+/* BOTÓN */
+.btn-login{
+width:100%;
+padding:14px;
+border:none;
+border-radius:8px;
+
+background:#c8a84b;
+color:#000;
+
+font-weight:500;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn-login:hover{
+background:#e8cc7a;
+transform:translateY(-2px);
+}
+
+/* DIVIDER */
+.login-divider{
+text-align:center;
+margin:20px 0;
+position:relative;
+}
+
+.login-divider span{
+background:transparent;
+padding:0 10px;
+color:#ccc;
+}
+
+/* GOOGLE */
+.google-btn{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid rgba(255,255,255,0.3);
+
+background:transparent;
+color:#fff;
+cursor:pointer;
+transition:0.3s;
+}
+
+.google-btn:hover{
+background:rgba(255,255,255,0.1);
+}
+
+/* FOOTER */
+.login-footer{
+text-align:center;
+margin-top:20px;
+font-size:13px;
+}
+
+.login-footer a{
+color:#c8a84b;
+text-decoration:none;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: 1px solid var(--dorado);
+  color: var(--dorado);
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: var(--dorado-claro);
+  color: var(--negro);
+}

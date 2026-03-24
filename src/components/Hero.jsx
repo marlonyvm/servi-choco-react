@@ -1,7 +1,7 @@
 import "./Hero.css";
 import { useEffect, useState } from "react";
 
-const frases= ["Experiencias únicas lideradas por jóvenes para la restauración ecológica del departamento del Chocó",
+const frases = ["Experiencias únicas lideradas por jóvenes para la restauración ecológica del departamento del Chocó",
   "Turismo regenerativo comunitario del Pacífico"
 ]
 
@@ -17,7 +17,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="hero" id="inicio">
+    <section className="section" id="hero">
 
       <div className="hero-overlay"></div>
 

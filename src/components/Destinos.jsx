@@ -27,8 +27,8 @@ function Destinos() {
   };
 
   return (
-    <section className="destinos" id="destinos">
-      <div className="destinos-container">
+    <section className="section" id="destinos">
+      <div className="container">
       <div className="destinos-intro reveal">
         <div><div className="section-label">02 — Experiencias</div><h2 className="section-title">Destinos del<br></br><em>Pacífico</em></h2></div>
         <p>Desde las ballenas de Nuquí hasta las cascadas de Tutunendo, cada rincón del Chocó es una historia que merece ser vivida.</p>
