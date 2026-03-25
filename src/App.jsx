@@ -2,6 +2,7 @@ import './App.css'
 import "leaflet/dist/leaflet.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CustomCursor from "./components/CustomCursor";
+import AIWidget from './components/AIWidget';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Nosotros from "./components/Nosotros";
@@ -19,6 +20,7 @@ function Home() {
   return (
     <>
       <CustomCursor/>
+      <AIWidget/>
       <Navbar />
       <Hero />
       <Stats />

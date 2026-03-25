@@ -1,24 +1,15 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./AudioPlayer.css";
 
 function AudioPlayer() {
 
   const audioRef = useRef();
 
-  const playlist = [
-    {
-      name: "Sonidos del Chocó",
-      src: "/audio/choco1.mp3"
-    },
-    {
-      name: "Selva y mar",
-      src: "/audio/choco2.mp3"
-    }
-  ];
+  const playlist = ["/audio/Audio1.mp3","/audio/Audio2.mp3","/audio/Audio3.mp3","/audio/Audio4.mp3"];
 
   const [current, setCurrent] = useState(0);
   const [playing, setPlaying] = useState(false);
-  const [started, setStarted] = useState(false); // 🔥 clave
+  const [started, setStarted] = useState(false);
 
   const togglePlay = () => {
     if (!audioRef.current) return;
@@ -29,26 +20,32 @@ function AudioPlayer() {
     } else {
       audioRef.current.play();
       setPlaying(true);
-      setStarted(true); // 🔥 ya se activó el player
+      setStarted(true);
     }
   };
 
   const nextSong = () => {
-    const next = (current + 1) % playlist.length;
-    setCurrent(next);
-    setPlaying(false);
+    setCurrent((prev) => (prev + 1) % playlist.length);
+    setPlaying(true);
   };
 
   const prevSong = () => {
-    const prev = (current - 1 + playlist.length) % playlist.length;
-    setCurrent(prev);
-    setPlaying(false);
+    setCurrent((prev) =>
+      (prev - 1 + playlist.length) % playlist.length
+    );
+    setPlaying(true);
   };
+
+  // 🔥 auto play cuando cambia canción
+  useEffect(() => {
+    if (playing && audioRef.current) {
+      audioRef.current.play();
+    }
+  }, [current]);
 
   return (
     <div className="audio-player">
 
-      {/* 🔥 MODO INICIAL */}
       {!started ? (
         <button onClick={togglePlay}>▶</button>
       ) : (
@@ -56,30 +53,28 @@ function AudioPlayer() {
           <button onClick={prevSong}>⏮</button>
 
           <button onClick={togglePlay} className="play-btn">
-
-  {playing ? (
-    <div className="bars">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  ) : (
-    "▶"
-  )}
-
-</button>
+            {playing ? (
+              <div className="bars">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            ) : (
+              "▶"
+            )}
+          </button>
 
           <button onClick={nextSong}>⏭</button>
 
           <span className="song-name">
-            {playlist[current].name}
+            {"Chocó Mix"}
           </span>
         </>
       )}
 
       <audio
         ref={audioRef}
-        src={playlist[current].src}
+        src={playlist[current]}
         onEnded={nextSong}
       />
 
