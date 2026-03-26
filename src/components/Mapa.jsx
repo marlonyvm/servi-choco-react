@@ -17,7 +17,7 @@ function MoverMapa({ destino }) {
 
   useEffect(() => {
     if (destino) {
-      map.flyTo([destino.lat, destino.lng], 11, {duration:1.5});
+      map.flyTo([destino.lat, destino.lng], 14, {duration:1.5});
     }
   }, [destino, map]);
 

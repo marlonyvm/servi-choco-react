@@ -29,7 +29,7 @@
   display: grid;
   grid-template-columns: 300px 1fr;
   gap: 1.5rem;
-  max-height: 500px;
+  height: 500px;
   margin-top: 20px;
 }
 
