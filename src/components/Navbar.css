@@ -47,6 +47,7 @@ nav.scrolled {
     letter-spacing: .12em;
     color: var(--crema);
     text-decoration: none;
+    cursor: pointer;
 }
 
 .nav-logo img {

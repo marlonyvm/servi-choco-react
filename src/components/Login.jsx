@@ -9,17 +9,48 @@ export default function Login() {
   const navigate = useNavigate();
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aquí puedes manejar el login, por ejemplo llamar a tu API
-    console.log({ email, password, remember });
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("https://servichoco-production.up.railway.app/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email,
+        password
+      })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert(data.message || "Error al iniciar sesión");
+      return;
+    }
+
+    // 🔐 Guardar token
+    if (remember) {
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", data.name);
+    } else {
+      sessionStorage.setItem("token", data.token);
+      sessionStorage.setItem("user", data.name);
+    }
+
+    // 🚀 Redirigir
+    navigate("/");
+
+  } catch (err) {
+    console.error(err);
+    alert("Error conectando con el servidor");
+  }
+};
 
   return (
     <div className="login-bg">
-      <button className="back-btn" onClick={() => navigate("/")}>
-        ← Volver al inicio
-      </button>
       <div className="login-container">
         <div className="login-card">
           {/* Header */}
@@ -81,7 +112,10 @@ export default function Login() {
 
           {/* Footer */}
           <div className="login-footer">
-            ¿No tienes cuenta? <a href="#">Crear cuenta</a>
+            ¿No tienes cuenta? {" "}
+            <span onClick={() => navigate("/registro")} style={{cursor:"pointer"}}>
+              Regístrate
+            </span>
           </div>
         </div>
       </div>

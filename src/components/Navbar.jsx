@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "../images/logo-navbar.png";
 import AudioPlayer from "./AudioPlayer";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Navbar() {
 
@@ -10,6 +10,7 @@ function Navbar() {
   const [active, setActive] = useState("inicio");
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Detectar scroll
   useEffect(() => {
@@ -31,18 +32,31 @@ function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const irA = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+  const irA = (seccion) => {
+    if (location.pathname !=="/"){
+      navigate("/");
+      setTimeout(()=> {
+        const el = document.getElementById(seccion);
+        if (el){
+          el.scrollIntoView({behavior:"smooth"});
+        }
+      },100);
+    } else {
+      const el = document.getElementById(seccion);
+      if (el){ 
+        el.scrollIntoView({behavior: "smooth"});
+      }
+    }
     setOpen(false);
   };
+  
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
 
-      <div className="nav-logo">
-        <a href="#hero">
-          <img src={logo} alt="Servichocó" /></a>
+      <div className="nav-logo" onClick={()=>
+        irA("hero")}>
+        <img src={logo} alt="Servichocó"/>
       </div>
 
       {/* BOTÓN MOBILE */}
