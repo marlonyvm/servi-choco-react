@@ -41,7 +41,7 @@ export default function Login() {
     }
 
     // 🚀 Redirigir
-    navigate("/");
+    window.location.href="/";
 
   } catch (err) {
     console.error(err);
