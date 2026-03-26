@@ -17,7 +17,7 @@ function MoverMapa({ destino }) {
 
   useEffect(() => {
     if (destino) {
-      map.setView([destino.lat, destino.lng], 11);
+      map.flyTo([destino.lat, destino.lng], 11, {duration:1.5});
     }
   }, [destino, map]);
 
@@ -69,7 +69,7 @@ function Mapa() {
                     if (marker) {
                       marker.openPopup();
                     }
-                  }, 300); // espera a que el mapa se mueva
+                  }, 800); // espera a que el mapa se mueva
                 }}
               >
                 <div className="m-name">
@@ -97,7 +97,7 @@ function Mapa() {
             {/* 🔥 mueve el mapa */}
             <MoverMapa destino={destinoSeleccionado} />
 
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{ attribution:'Tiles © Esri" attribution="&copy; OpenStreetMap &copy; CartoDB" />
 
             {destinos.map(d => (
               <Marker

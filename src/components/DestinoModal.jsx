@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./DestinoModal.css";
 
 function DestinoModal({ destino, onClose }) {
 
     const [index, setIndex] = useState(0);
+    const navigate = useNavigate();
+    const location = useLocation();
     
       const siguiente = () => {
         if (!destino.fotos) return;
@@ -14,7 +17,24 @@ function DestinoModal({ destino, onClose }) {
         if (!destino.fotos) return;
         setIndex((index - 1 + destino.fotos.length) % destino.fotos.length);
       };
-    
+
+       const irAReservar = () => {
+    // 🔥 cerrar modal correctamente
+    onClose();
+
+    // 🔥 navegar + scroll
+    if (location.pathname !== "/") {
+      navigate("/");
+
+      setTimeout(() => {
+        const el = document.getElementById("reservar");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 150);
+    } else {
+      const el = document.getElementById("reservar");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   // 🔥 cerrar con ESC
   useEffect(() => {
@@ -143,16 +163,16 @@ function DestinoModal({ destino, onClose }) {
             {(destino.texto || []).map((p, i) => (
                 <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
             ))}
-            <div class="dest-text-highlight">{destino.highlight || ''}</div>
+            <div className="dest-text-highlight">{destino.highlight || ''}</div>
             </div>
         </div>
         </div>
-        <div class="dest-modal-footer">
-            <div class="dest-modal-price">
+        <div className="dest-modal-footer">
+            <div className="dest-modal-price">
                 Desde <strong id="dest-modal-precio">COP ${destino.precio.toLocaleString()}</strong> <span>/ persona / noche</span>
             </div>
-            <button class="btn-reservar-dest" id="dest-modal-cta">Reservar este destino →</button>
-        </div>
+            <button className="btn-reservar-dest" id="dest-modal-cta" onClick={irAReservar}>Reservar este destino →</button>
+        </div> 
       
 
       </div>
